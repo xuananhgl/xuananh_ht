@@ -23,6 +23,7 @@
     }
   </style>
     <style>
+  body{  font-family: 'Roboto', sans-serif;}
  .line-article
  {
    -webkit-line-clamp: 4;
@@ -407,9 +408,9 @@
                         <i class="fa-solid fa-pen text-[#CCC]"></i>
                         </div> 
                         <select name="article_id" id="article-id" class="w-[150px] rounded-full text-center cursor-pointer">
-                        <option value="<?= $visualeditor->article_id ?>"><?=__('article')?> (<?= $visualeditor->article_id ?>)</option>
+                        <option value="<?= $visualeditor->article_id ?>"><?=__('article')?>: (<?= $visualeditor->article_id ?>)</option>
                         <?php foreach ($article2 as $list): ?>
-                        <option value="<?= $list->id?>"><?=__('article')?><?=($list->title)?></option>
+                        <option value="<?= $list->id?>"><?=__('article')?>:<?=($list->title)?></option>
                          <?php endforeach;?>  
                         </select>
                          <button type="submit" ><i class="fa-solid fa-display"></i></button>
@@ -443,7 +444,7 @@
              
             </div>
               <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-               <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+               <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
               </div>                            
               </div>
               <div class="w-[300px]  mx-auto border rounded-lg p-5 bg-white md:absolute right-[100px] top-[100px]">
