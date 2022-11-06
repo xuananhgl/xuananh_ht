@@ -21,8 +21,6 @@
   
  
     }
-  </style>
-    <style>
   body{  font-family: 'Roboto', sans-serif;}
  .line-article
  {
@@ -376,7 +374,7 @@
                           </div>
   </div>       
         <div class="w-full bg-white ">       
-                            <h1 class="text-[40px] font-bold text-center mb-[100px]"><?=__('Vous êtes…')?></h1>
+                            <h1 class="text-[40px] font-bold text-center mb-[100px] pt-[80px]"><?=__('Vous êtes…')?></h1>
                             <div class=" md:flex gap-5 justify-center ">
                             <div class="text-center border rounded-lg h-[343px] p-[34px] max-w-[318px] flex flex-col justify-between my-5 mx-auto md:mx-0">
                               <img src="../img/ZG_icon_home_entreprise@3x.png" alt="" class="w-[100px] mx-auto">
@@ -471,7 +469,13 @@
                           <div class=" max-w-[318px] h-[454px] border rounded-[22px]  mx-auto md:mx-0 p-[23px] relative">
                               <div class="max-w-[280px] mx-auto"><img src="<?= $article1[0]['img_url']?>" alt="" class=" w-full max-h-[126px] "></div>
                               <h1 class="text-[24px] font-bold"><?= $article1[0]['title']?></h1>
-                              <p class="text-[#FF7D66] "><?= $article1[0]['category']?></p>
+                              <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#FF7D66] bg-[#FF7D6626] "><?= $article1[0]['category']?><p class=
+                              "text-[13px] leading-[20px] font-medium ml-3"> 
+                                <?php echo $article1[0]['modified']->timeAgoInWords([
+                                    'accuracy' => ['month' => 'month'],
+                                    'end' => '1 year'
+                                ])?></p></p>
+                                </div>
                               <p class="line-article text-[13px] leading-[20px] font-medium "><?= $article1[0]['description']?></p>
                               <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 w-[100px] text-center rounded-full "><a class="text-[#049BF7]" href="#">Lire l’article</a></div>
                           </div>
@@ -481,9 +485,15 @@
                             </div>
                               <div class=" pl-4 max-w-[330px] relative mx-auto">
                               <h1 class=" text-[24px] font-bold"><?= $article1[1]['title']?></h1>
-                              <p class="text-[13px] leading-[20px] font-medium text-[#4CC6A0] "><?= $article1[1]['category']?></p>
+                              <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#4CC6A0] bg-[#4CC6A026] "><?= $article1[1]['category']?><p class=
+                              "text-[13px] leading-[20px] font-medium ml-3"> 
+                                <?php echo $article1[1]['modified']->timeAgoInWords([
+                                    'accuracy' => ['month' => 'month'],
+                                    'end' => '1 year'
+                                ])?></p></p>
+                                </div>
                               <p class="text-[13px] leading-[20px] font-medium"><?= $article1[1]['description']?></p>
-                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 w-[100px] text-center rounded-full h-[30px]"><a class="text-[#049BF7]" href="#">Lire l’article</a></div>
+                              <div class="absolute bottom-0 left-[20px] border-[#049BF7] border-2 w-[100px] text-center rounded-full h-[30px]"><a class="text-[#049BF7]" href="#">Lire l’article</a></div>
                           </div>
                           </div>
                     </div>
@@ -491,13 +501,25 @@
 
                           <div class="relative max-w-[492px] h-[454px] p-[23px] border rounded-[22px] mt-[30px] mx-auto">
                               <h1 class="text-[24px] font-bold"><?= $article1[2]['title']?></h1>
-                              <p class="text-[13px] leading-[20px] font-medium text-[#1C9DF4] ]"><?= $article1[2]['category']?></p>
+                              <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#1C9DF4] bg-[#1C9DF426]"><?= $article1[2]['category']?><p class=
+                              "text-[13px] leading-[20px] font-medium ml-3"> 
+                                <?php echo $article1[2]['modified']->timeAgoInWords([
+                                    'accuracy' => ['month' => 'month'],
+                                    'end' => '1 year'
+                                ])?></p></p>
+                                </div>
                               <p class="text-[13px] leading-[20px] font-medium"><?= $article1[2]['description']?></p>
                               <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 w-[100px] text-center rounded-full "><a class="text-[#049BF7]" href="#">Lire l’article</a></div>
                           </div>
                         <div class="relative max-w-[502px] h-[454px] p-[23px] border rounded-[22px] md:ml-[30px]  mt-[30px] mx-auto">                      
                               <h1 class="text-[24px] font-bold"><?= $article1[3]['title']?></h1>
-                              <p class="text-[13px] leading-[20px] font-medium text-[#EAAB00] ]"><?= $article1[3]['category']?></p>
+                              <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#EAAB00] bg-[#FFD05166] "><?= $article1[3]['category']?><p class=
+                              "text-[13px] leading-[20px] font-medium ml-3"> 
+                                <?php echo $article1[3]['modified']->timeAgoInWords([
+                                    'accuracy' => ['month' => 'month'],
+                                    'end' => '1 year'
+                                ])?></p></p>
+                                </div>
                               <p class="text-[13px] leading-[20px] font-medium"> <?= $article1[3]['description']?></p>
                               <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 w-[100px] text-center rounded-full"><a class="text-[#049BF7]" href="#">Lire l’article</a></div>
                          </div>
