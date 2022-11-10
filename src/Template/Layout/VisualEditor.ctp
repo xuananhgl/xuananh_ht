@@ -20,7 +20,7 @@ $z0gSeoKeywords = 'Logiciel de gestion de projets';
     <?= $this->Html->meta('keywords', $z0gSeoKeywords );?>
     <?= $this->Html->meta('description', $z0gSeoDescription);?>
 
-   
+    <!-- <?= $this->Html->css('bootstrap/css/bootstrap.css')?> -->
     <?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css') ?>
 
     <!-- <?= $this->Html->css('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap')?> -->

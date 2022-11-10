@@ -27,7 +27,7 @@
   }
  .line-article
  {
-   -webkit-line-clamp: 4;
+   -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
     overflow: hidden;
      display: -webkit-box;
@@ -35,62 +35,80 @@
   </style>
  
 <body class="bg-[<?=$banner->background_color?>] w-[100%] mx-auto px-0">
-<div class="w-full h-[40px] bg-[#041839] mx-auto">
-  <div class="max-w-[1024px] mx-auto flex justify-between items-center">
-  <h1 class=" text-[24px] font-bold text-white hidden md:block">Dashboard</h1>
-  
-  <div class="max-w-[400px]">
-<div id="dropdownDividerdiv" data-dropdown-toggle="dropdownDivider" class="text-white bg-transparent focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white" type="div"> <?=__('Change region')?> <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
 
-<!-- Dropdown menu -->
-<div id="dropdownDivider" class="hidden z-50 w-44 bg-white rounded z-50 divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 310px);">
-    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Vietnamese'), '?lang=vi_VN', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','German'), '?lang=de_DE', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','English'), '?lang=en_US', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Spanish'), '?lang=es_ES', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li> 
-        <?= $this->Html->link(__x('listLanguage','French'), '?lang=fr_FR', ['class'=>'pl-5 text-[14px] font-medium'])?>
+ 
 
-      </li>
-      <li>
-         <?= $this->Html->link(__x('listLanguage','Nederlands'), '?lang=nl_NL', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Polish'), '?lang=pl_PL', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Português'), '?lang=pt_BR', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Русский'), '?lang=ru_RU', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Bokmål'), '?lang=nb_NO', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','Ελληνικά'), '?lang=el_GR', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','日本語'), '?lang=ja_JP', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-      <li>
-      <?= $this->Html->link(__x('listLanguage','繁體中文'), '?lang=zh_CN', ['class'=>'pl-5 text-[14px] font-medium'])?>
-      </li>
-    </ul>
-</div>
-  <a class=" text-[18px] font-bold text-white" href="/logout"><?=__('Log Out')?></a>
-</div>
-</div>
-</div>
+<nav class="px-2 bg-gray-700 border-gray-200 dark:bg-gray-900 dark:border-gray-700 p-3">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <a href="#" class="flex items-center text-white font-bold">Dashboard
+        
+    </a>
+    <div data-collapse-toggle="mobile-menu"  class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500" aria-controls="mobile-menu-2" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </div>
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      <ul class="flex flex-col items-center p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      
+        <li>
+            <div id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex justify-between items-center py-2 pr-4 pl-3 w-full text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent font-bold cursor-pointer"><?=__('Change region')?><i class="fa-solid fa-down ml-3"></i>
+            <div id="dropdownNavbar" class="hidden z-50 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 310px);">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-400 cursor-pointer" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Vietnamese'), '?lang=vi_VN', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','German'), '?lang=de_DE', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','English'), '?lang=en_US', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Spanish'), '?lang=es_ES', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">  <?= $this->Html->link(__x('listLanguage','French'), '?lang=fr_FR', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> <?= $this->Html->link(__x('listLanguage','Nederlands'), '?lang=nl_NL', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Polish'), '?lang=pl_PL', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Português'), '?lang=pt_BR', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Русский'), '?lang=ru_RU', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Bokmål'), '?lang=nb_NO', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','Ελληνικά'), '?lang=el_GR', ['class'=>'pl-5 text-[14px] font-medium'])?> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','日本語'), '?lang=ja_JP', ['class'=>'pl-5 text-[14px] font-medium'])?></a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><?= $this->Html->link(__x('listLanguage','繁體中文'), '?lang=zh_CN', ['class'=>'pl-5 text-[14px] font-medium'])?> </a>
+                  </li>
+                </ul>
+                
+            </div>
+        </li>
+        <li>
+        <a href="/logout" class="block py-2 font-bold  px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"><?=__('Log out')?><i class="fa-solid fa-right-from-bracket ml-2"></i></a>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 
+========= -->
+ 
 <div class="main w-full mx-auto px-0">
         <div class="mx-auto bg-[#fff] h-[100px] ">     
             <nav class="border-gray-200 p-0 rounded dark:bg-gray-900 max-w-[1024px] mx-auto   ">
@@ -130,22 +148,22 @@
               <?= $this->Form->create($banner) ?>
   <div class=" max-w-[1571px] mx-auto">
               <!-- Extra Large Modal -->
-              <div id="extralarge-modal" class="hidden fixed top-0 right-0 left-0 bottom-5 z-50 h-[800px] lg:h-full overflow-y-scroll w-screen p-1"> 
-               <div class="w-full h-full bg-[#1C2A34] mx-auto" >
-                <div class="flex justify-between items-center p-4">
-                     <h3 class="font-bold text-[#ccc]">Banner</h3>
+              <div id="extralarge-modal" class="hidden fixed top-0 right-0 left-0 bottom-0 z-50  lg:h-full overflow-y-scroll w-screen p-1"> 
+               <div class="w-full h-screen py-[30px] px-2 rounded-lg bg-white mx-auto flex flex-col justify-center" >
+                <div class="flex justify-end pr-4">
+    
                     <button type="button" class="" data-modal-toggle="extralarge-modal"> 
                     <i class="fa-solid fa-circle-xmark text-[30px] text-[#ccc]"></i>                                     
                     </button>
                   </div>
-                  <div class="lg:flex max-w-[1400px] h-[600px] mx-auto">
-                    <div class="w-full relative mx-auto flex rounded-lg hover:border-2 border-sky-500 shadow-2xl p-5 bg-[<?=$banner->background_color?>] ">
+                  <div class="lg:flex w-full h-[750px] md:h-full overflow-y-scroll mx-auto">
+                    <div class="w-full md:h-[600px] justify-center  flex rounded-lg hover:border-2 border-sky-500 shadow-2xl p-5 bg-[<?=$banner->background_color?>] relative">
                      
 
-                          <div class="flex justify-center sm:justify-end z-0 lg:h-[420px] h-[500px] lg:h-full w-[90%] mx-auto">
-                            <?= $this->Html->image($banner->image_url, ['class'=>'sm:h-[300px] sm:w-[533px] w-[375px] h-[250px]  object-cover md:shrink-0'])?></div>
+                          <div class="flex justify-center sm:justify-end z-0 lg:h-[420px] h-[500px] lg:h-full w-[1024px] lg:mt-[100px]  ">
+                            <?= $this->Html->image($banner->image_url, ['class'=>'sm:h-[300px] sm:w-[533px] w-[375px] h-[250px] opacity-75  object-cover md:shrink-0'])?></div>
 
-                           <div class="absolute top-[180px] sm:top-0 ">
+                           <div class="absolute top-[180px] sm:top-[50px] ">
                                   
                            <div class="max-w-[630px] "> <textarea class="text-[<?=$banner->text_color?>] cursor-pointer focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 rounded-lg p-2 mt-5  xl:text-[70px] w-full sm:text-6xl text-4xl bg-[transparent] border-0 hover:bg-[transparent] font-medium mb-5"
                             name="title" required="required" maxlength="255" id="title" rows="3"><?=$banner->title?></textarea></div>
@@ -159,19 +177,19 @@
                             name="btn_content" required="required" maxlength="99" id="btn-content" value="<?=$banner->btn_content?>">                    
                          </div>         
                       </div>
-                        <div class="lg:w-[30%] relative h-[300px] md:h-[600px] bg-white rounded-lg mx-auto p-5 lg:ml-5 mt-5 lg:mt-0">
+                        <div class="lg:w-[30%] relative h-[300px] md:h-[600px] bg-white rounded-lg mx-auto p-5 lg:ml-5 mt-5 lg:mt-0 shadow-2xl border">
                               <h1 class="text-center font-bold text-[20px] bg-[#ccc] mb-3"><?=__('Dashboard')?></h1>
                             
                             <div class="flex md:block hover:border-1  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 cursor-pointer ">
-                            <div class="flex items-center"><p class="text-[16px] font-bold"><?=__('Background')?></p>
-                              <input class="w-[40px] h-[40px] ml-4  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 " type="color" name="background_color" id="background-color" value="<?=$banner->background_color?>"></div>
-                              <div class="flex items-center"><p class="text-[16px] font-bold"><?=__('Color')?></p>
-                              <input class="w-[40px] h-[40px] ml-4  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2" type="color" name="text_color" id="text-color" value="<?=$banner->text_color?>"></div>
-                              <?= $this->Html->image($banner->image_url, ['class'=>' object-cover mx-auto mt-3 mb-3 rounded-lg hidden lg:block md:shrink-0'])?>
+                            <div class="flex items-center"><p class="text-[16px] font-bold"><?=__('Background:')?></p>
+                              <input class="w-[40px] h-[40px] ml-4 border-2 border-black focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 mr-2" type="color" name="background_color" id="background-color" value="<?=$banner->background_color?>"></div>
+                              <div class="flex items-center"><p class="text-[16px] font-bold"><?=__('Color:')?></p>
+                              <input class="w-[40px] h-[40px] ml-4 border-2 border-black focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 " type="color" name="text_color" id="text-color" value="<?=$banner->text_color?>"></div>
+                              <?= $this->Html->image($banner->image_url, ['class'=>' object-cover mx-auto mt-3 mb-3 rounded-lg hidden lg:block md:shrink-0  max-h-[200px] max-h-[200px] '])?>
                             </div>
                               <p class="text-[16px] font-bold"><?=__('image-url')?></p>
-                              <input class="w-full rounded-lg mt-3 p-2 " type="text" name="image_url" required="required" maxlength="255" id="image-url" value="<?=$banner->image_url?>"> 
-                              <button data-modal-toggle="defaultModal" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 absolute right-5 bottom-5 
+                              <input class="w-full rounded-lg mt-3 p-2 border-2 border-black " type="text" name="image_url" required="required" maxlength="255" id="image-url" value="<?=$banner->image_url?>"> 
+                              <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 absolute right-5 bottom-5 
                                            focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
                      
                       </div>
@@ -182,35 +200,42 @@
             </div>
             
                 <div class="max-w-[1024px] mx-auto border-0 relative mh-[500px] mt-[80px] md:mb-[126px] mb-[400px]">
+                  
+                <div class="top-5 right-5 z-30 absolute flex gap-2">
+                <div id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  "><i class="fa-solid fa-bars"></i></div>
+                <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  " data-modal-toggle="extralarge-modal">
+                 <i class="fa-solid fa-gear text hover:text-[24px] cursor-pointer"></i>
+                </div>
+                </div>
 
-                <div id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 absolute top-3 right-3 z-30"><i class="fa-solid fa-bars"></i></div>
 
                     <!-- Dropdown menu -->
                     <div id="dropdownDefaultCheckbox" class="hidden z-30 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"  data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 324px, 0px);">
-                        <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                          <li>
-                            <div class="flex items-center border rounded-lg p-2 z-40">  
-                            <select name="banner_id" id="banner-id" class="max-w-[180px] text-[14px] p-1  text-center cursor-pointer">
-                              <option  value="<?= $visualeditor->banner_id ?>"><?=__('Banner:')?> </option>
-                              <?php foreach ($banner1 as $ban): ?>
-                              <option value="<?= $ban->id?>"><?=__('Banner:')?><?=($ban->id)?></option>
-                              <?php endforeach; ?>
-                              
-                            </select>
-                              <button type="submit" class="mr-3 cursor-pointer hover:text-[24px]"><i class="fa-solid fa-display"></i></button>         
-                            </div>
-                          </li>
-                          <li>
-                            <div class="flex items-center border rounded-lg p-2">
-                              <div class="block  text-black mx-auto flex  rounded-xl text-center h-[30px] items-center " data-modal-toggle="extralarge-modal">
-                              <?=__('Editor:')?> <i class="fa-solid fa-pen text leading-[30px] ml-2 hover:text-[24px] cursor-pointer"></i>
-                              </div>
+                       
+                            <div class="flex items-center border rounded-lg p-2 bg-white bg- z-40 font-bold">  
+                            <fieldset>
+                          <legend>Banner:</legend>
 
-                              </div>
-                          </li>
+                               
+                                      <?php foreach ($banner1 as $ban): ?>
+                                        <div>
+                                          <input type="radio" id="banner-id" name="banner_id" value="<?= $ban->id?>">
+                                          <label for="dewey"><?= $ban->title?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                
+                                    </fieldset>
+                                  </div>       
+                          
+                            <div class="flex items-center border rounded-lg p-2">
+                              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View</button> 
+                              
+
+                              </div> 
+                         </div> 
                         
-                        </ul>
-                    </div>
+                        
+                   
               
                     <div class="flex md:justify-end  justify-start mt-[40px] mr-[50px] w-full z-50 max-w-[1024px]">
                       <?= $this->Html->image($banner->image_url, ['class'=>'lg:h-[412px] md:h-[300px] w-full object-cover max-w-[733px]'])?>
@@ -252,52 +277,50 @@
                 </div>
         </div>
             
-                <div class=" max-w-[1571px] mx-auto pt-[80px] sm:p-0">
+                <div class=" max-w-[1571px] mx-auto pt-[80px] p-1">
                 <div class="max-w-[1571px] mx-auto mb-[80px]"> 
                 <div class="max-w-[1024px] h-[422px] border rounded-[22px] bg-white p-[30px] relative mx-auto"> 
-                                      
-                    <div id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover" class="absolute right-3 cursor-pointer top-3 z-40 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa-solid fa-bars"></i></div>
-
                     <!-- Dropdown menu -->
+                    <div class="top-5 right-5 z-30 absolute flex gap-2">
+                    <div id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  "><i class="fa-solid fa-bars"></i></div>
+                <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  " data-modal-toggle="defaultModal">
+                 <i class="fa-solid fa-gear text hover:text-[24px] cursor-pointer"></i>
+                </div>
+                 </div>
+
+
+                    
                     <div id="dropdownBgHover" class="hidden z-10 w-48 bg-white rounded shadow dark:bg-gray-700" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 324px, 0px);">
-                        <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
-                          <li>
-                            <div class="flex items-center p-2 rounded hover:bg-gray-100 border">
-                            <select name="testimonials_id" id="testimonials-id" class="max-w-[180px] text-[14px] text-center cursor-pointer">
-                            <option value="<?= $visualeditor->testimonials_id ?>"><?=__('Testimonials:')?></option>
-                            <?php foreach ($testimonial1 as $value): ?>
-                            <option value="<?= $value->id?>"><?=__('Testimonial:')?><?=($value->id)?></option>
-                            <?php endforeach;?>  
-                            </select>
-                             <button type="submit" class="ml-3 cursor-pointer hover:text-[24px]"><i class="fa-solid fa-display"></i></button>                    
-                            </div>
-                          </li>
-                          <li>
-                            <div class="flex items-center p-2 rounded hover:bg-gray-100 border">
-                            <div class="block  text-center font-medium rounded-xl text-sm  text-center mr-2"data-modal-toggle="defaultModal">
-                              <?=__('Editor:')?><i class="fa-solid fa-pen leading-[30px] ml-4 hover:text-[24px]"></i>
-                              </div>
-                         
-                              </div>
-                          </li>
-                         
-                        </ul>
-                    </div>
+                        
+                            <div class="flex items-center p-2 rounded hover:bg-gray-100 border p-4 bg-white text-black p-2 font-bold">
+                           
+                                     <fieldset>
+                                  <legend>list testimonial:</legend>
+                              
+                                  <?php foreach ($testimonial1 as $value): ?>
+                                        <div>
+                                          <input type="radio" id="testimonials-id" name="testimonials_id" value="<?= $value->id?>">
+                                          <label class="line-article" for="dewey"><?=($value->description)?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                        </fieldset>  
+                               </div>
+                                  
+                                 <button type="submit" class="m-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View</button>
+                             
+                            
 
                 
-                           
-                      <!-- <div class="w-[190px] h-[422px] border bg-sky-500 hidden rounded-tr-[22px] rounded-br-[22px]"></div> -->
-                    
-                      <!-- Modal toggle -->
-                          <!-- Main modal -->
-                          <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden  overflow-auto fixed top-5 md:top-0 right-0 left-0 z-50 md:h-full h-[600px] overflow-y-auto ">
-                              <div class="w-full overflow-y-auto  rounded-lg bg-white my-auto mx-auto">
+                                  </div>
+                  
+                          <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden  overflow-auto fixed top-3 md:top-0 right-0 left-0 bottom-0 z-50">
+                              <div class="w-full overflow-y-auto h-screen py-5 rounded-lg bg-white mx-auto flex justify-center item-center">
                                   <!-- Modal content -->
-                                  <div class=" rounded-lg shadow h-full overflow-auto bg-[#1C2A34] h-full">
+                                  <div class=" rounded-lg shadow h-full overflow-auto bg-white w-full">
                                       <!-- Modal header -->
                                       <div class="flex justify-between items-start p-4 h-[50px]">
                                           <h3 class="text-xl font-semibold text-white ">
-                                              Editor-testimonial
+          
                                           </h3>
                                           <button type="button" class="h-full" data-modal-toggle="defaultModal">
                                           <i class="fa-solid fa-circle-xmark hover:text-[30px] text-[#ccc] text-[24px]"></i>
@@ -306,7 +329,7 @@
                                       </div>
                                       <!-- Modal body -->
                                   
-                                      <div class="p-6 lg:flex items-center  h-[800px]  m-3 max-w-[1500px] mx-auto">
+                                      <div class="p-6 lg:flex items-center  h-full  m-3 max-w-[1500px] mx-auto">
                                             <div class="lg:w-[1024px] max-w-[1024px] h-[500px] border rounded-[22px] bg-white p-[30px] relative mx-auto lg:mr-5">
                                               <div class=" font-medium text-[#ccc] flex justify-between w-full "><?=__('PRESSE ')?></div>
                                               <div class=""><?= $this->Html->image('https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg')?></div>
@@ -318,13 +341,13 @@
                                               <a class="text-center md:text-left absolute md:bottom-[5px] right-5 bottom-[-15px] h-[30px]" href="#"> <i class="fa-solid fa-up-right-from-square"></i><?=__('Read the article')?></a> </div>
                                               </div>
                                              
-                                            <div class="w-full lg:w-[30%] border rounded-xl p-3 mx-auto lg:h-[500px] bg-white relative">
+                                            <div class="w-full lg:w-[30%] border rounded-xl p-3 mx-auto lg:h-[500px] bg-white relative mt-3 lg:mt-0">
                                               <h1 class="text-center mb-5 text-[20px] font-extrabold hidden md:block bg-[#CCC] text-white"><?=__('dashboard')?></h1>
-                                              <?= $this->Html->image($testimonial->logo_url, ['class'=>'mx-auto p-2 rounded-lg border hover:border-2 object-cover'])?>
+                                              <?= $this->Html->image($testimonial->logo_url, ['class'=>'mx-auto p-2 rounded-lg border hover:border-2 object-cover hidden md:block'])?>
                                               <p class="font-bold"><?=__('url-logo')?>:</p><input class="border-2 pl-2 w-full cursor-pointer focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2" type="text" name="logo_url" required="required" maxlength="255" id="logo-url" value="<?=$testimonial->logo_url ?>">
                                               <p class="font-bold"><?=__('Testimonial Url')?>:</p>
-                                              <input class="border-2 pl-2 w-full cursor-pointer focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2" type="text" name="testimonial_url" required="required" maxlength="255" id="testimonial-url" value="<?=$testimonial->testimonial_url?>">
-                                              <button data-modal-toggle="defaultModal" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 absolute right-5 bottom-5 
+                                              <input class="border-2 pl-2 w-full cursor-pointer focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-2 mb-5" type="text" name="testimonial_url" required="required" maxlength="255" id="testimonial-url" value="<?=$testimonial->testimonial_url?>">
+                                              <button data-modal-toggle="defaultModal" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 lg:absolute right-4 bottom-4 
                                            focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
                                             </div>
                                         
@@ -351,13 +374,13 @@
                     </div> 
               </div>     
                  
-                    <div class="w-full bg-[#041839] mx-auto ">
+                    <div class="w-full bg-[#041839] mx-auto px-1">
                       <div class="md:flex justify-center mb-[100px] pt-[100px] items-center">
                         <h1 class="md:text-[50px] text-[35px] text-white md:w-[200px] font-bold text-center text-[#049BF7]"><?=__('TO SHORTEN IT')?>.</h1>
-                        <div class="md:ml-[60px] text-center"><p class="text-white max-w-[739px] font-bold md:text-[26px] text-[20px] text-center md:text-start">
+                        <div class="md:ml-[60px] text-center"><p class="text-white max-w-[739px] font-bold md:text-[26px] text-[16px] text-center md:text-start">
                         <?=__('Z0 Gravity is a multi-project management software:')?></p>
                         
-                          <p class="text-white max-w-[739px]  md:text-[26px] text-[20px] text-center md:text-start"><?=__('whatever their complexity, you easily manage the schedules, budgets and human resources of your projects through cross-functional and collaborative use.')?></p>
+                          <p class="text-white max-w-[739px]  md:text-[26px] text-[16px] text-center md:text-start"><?=__('whatever their complexity, you easily manage the schedules, budgets and human resources of your projects through cross-functional and collaborative use.')?></p>
                           
                         </div>
                       </div>
@@ -365,7 +388,7 @@
                   
                   
                     <div class="max-w-[1024px] h-[678px] md:flex mx-auto justify-between bg-[#FF7D66] md:rounded-[22px] mb-[100px]">
-                          <div class="pl-5 mb-[80px]  md:mb-0 ">
+                          <div class="md:pl-5 mb-[100px]  md:mb-0 pt-5">
                             <h1 class="text-white md:text-[40px] text-[30px] mt-5 text-center md:text-left mt-[150px] font-medium"><?=__('Our objective :')?></h1>
                             <p class="max-w-[400px] text-[#1C2A34]  md:text-[20px] text-[18px] text-center md:text-left mx-auto md:mx-0 mt-5"><?=__('It means helping any type of organization to carry out its projects with a single watchword:')?></p>
                             <h4 class="md:text-[40px] text-[30px] text-[#1C2A34] text-center md:text-left font-medium"> <?=__('sim-pli-ci-ty !')?></h4>
@@ -374,8 +397,8 @@
                             <div class=""> <?= $this->Html->image('m1.jpg', ['class'=>'md:w-[400px] md:h-[100%] h-[500px] w-full  md:rounded-tr-[22px] md:rounded-br-[22px] object-cover'])?></div>
 
                     </div>
-                          <div class="mx-auto max-w-[1024px] text-center">
-                            <h1 class="text-[#049BF7] md:text-[40px] text-[30px] font-medium"> <?=__('Discover the universe z0 Gravity')?></h1>
+                          <div class="mx-auto max-w-[1024px] text-center md:mt-0 mt-[300px]">
+                            <h1 class="text-[#049BF7] md:text-[40px] md:text-[30px] text-xl font-medium"> <?=__('Discover the universe z0 Gravity')?></h1>
                             <p class="text-[#F1F6FA] max-w-[700px] text-center mx-auto mt-5"><?=__('Schedules, budgets, calendars… In the blink of an eye, you have a global and strategic vision of the progress of your projects in real time!')?></p>
                             <div class=" bg-[#FFD051] rounded-full mt-5 h-[39px] max-w-[230px] mx-auto leading-[39px]"> <i class="fa-solid fa-play"></i> <?=__('Video presentation')?> </div>
                           </div>
@@ -415,16 +438,16 @@
            <h1 class="text-center text-[40px] font-bold mt-[200px] mb-[50px]"><?=__('Nos articles')?></h1>                           
            
           <!-- Main modal -->
-          <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden  fixed top-5 right-0 left-0 h-[750px] lg:h-full z-50 overflow-y-scroll ">
+          <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden  fixed top-0 right-0 left-0 bottom-0  z-50 py-5">
              
                   <!-- Modal content -->
-                  <div class="  rounded-lg shadow mx-auto py-5  relative h-screen">
+            <div class="w-full  rounded-lg shadow-2xl mx-auto py-5  relative h-screen flex justify-center items-center bg-white overflow-y-scroll">
                   <div class="flex justify-between p-4 items-center h-[50px] fixed top-0 right-0 left-0">
-                    <h3 class="text-xl font-semibold text-[#ccc]"> <?=__('Editor-article')?> </h3>
+                    <h3 class="text-xl font-semibold text-[#00]"> <?=__('Editor-article')?> </h3>
                     <div class="absolute top-1 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
                       <i class="fa-solid fa-circle-xmark hover:text-[30px] text-[24px] text-[#ccc]"></i></div>
               </div>
-            <div class=" p-5 h-[800px] w-full mt-[80px] md:flex mx-auto items-center">
+            <div class=" p-5 h-[750px] w-full mt-[80px] md:flex mx-auto items-center justify-center">
              
               <div class=" max-w-[676px] h-[454px] bg-white border mx-auto rounded-lg  p-4 mb-5 lg:flex ">
                 <div class=" ">
@@ -437,7 +460,7 @@
                                     'accuracy' => ['month' => 'month'],
                                     'end' => '1 year'
                                 ])?></p></div>
-                  <div class="max-w-[600px]"><textarea class=" w-full bg-transparent border-0 line-article" name="description_article" id="description-article" rows="6"><?=$article->description?></textarea></div>                
+                  <div class="max-w-[600px]"><textarea class=" w-full bg-transparent border-0  line-article" name="description_article" id="description-article" rows="4"><?=$article->description?></textarea></div>                
                               
                </div>                          
               </div>
@@ -464,40 +487,43 @@
                   </div>
                     
                 <div class="max-w-[1024px] mx-auto relative">
-
-                <button id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="absolute right-5 top-3 z-20 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><i class="fa-solid fa-bars"></i></button>
-
                   <!-- Dropdown menu -->
+                  <div class="top-5 right-5 z-30 absolute flex gap-2">
+                <div id="dropdownHelperButton" data-dropdown-toggle="dropdownHelper" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  "><i class="fa-solid fa-bars"></i></div>
+                <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  " data-modal-toggle="authentication-modal">
+                 <i class="fa-solid fa-gear text hover:text-[24px] cursor-pointer"></i>
+                </div>
+                </div>
+
+
+
+
                   <div id="dropdownHelper" class="hidden z-20 w-60 bg-white rounded divide-y divide-gray-100 shadow " data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 5287px);">
-                      <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
-                        <li>
-                          <div class="flex items-center p-2 rounded hover:bg-gray-100 border">
-                          <select name="article_id" id="article-id" class="max-w-[180px] text-[14px] text-center cursor-pointer">
-                              <option value="<?= $visualeditor->article_id ?>"><?=__('article:')?> (<?= $visualeditor->article_id ?>)</option>
-                              <?php foreach ($article2 as $list): ?>
-                              <option value="<?= $list->id?>"><?=__('article')?>:<?=($list->id)?> </option>
-                              <?php endforeach;?>  
-                              </select>
-                              <button type="submit" class="ml-3 cursor-pointer hover:text-[24px]"><i class="fa-solid fa-display"></i></button>       
-                            
-                          </div>
-                        </li>
-                        <li>
-                          <div class="flex items-center p-2 rounded hover:bg-gray-100 border">
-                          <div class="block  text-center font-medium rounded-xl text-sm  text-center mr-2" 
-                          data-modal-toggle="authentication-modal">
-                          <?=__('Editor:')?><i class="fa-solid fa-pen leading-[30px] ml-4 hover:text-[24px]"></i>
-                          </div> 
-                            
-                          </div>
-                        </li>
+                     
                       
-                      </ul>
+                          <div class="flex items-center p-2 rounded hover:bg-gray-100 border bg-white text-black font-bold p-2">
+                          <fieldset>
+                                  <legend><?=__('list-Article')?></legend>
+                                 <?php foreach ($article2 as $list): ?>
+                                        <div>
+                                          <input  type="radio" id="article-id" name="article_id" value="<?= $list->id?>">
+                                          <label for="article-id"><?= $list->title?></label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                        </fieldset>   
+                          </div>
+                      
+                          <button type="submit" class="m-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  ">View</i></button> 
+                            
+                         
+                     
+                      
+                     
                   </div>
       
                      <div class="md:flex">
                           <div class=" max-w-[318px] h-[454px] border rounded-[22px]  mx-auto md:mx-0 p-[23px] relative">
-                            <p class="w-[30px]"></p>
+                            <p class="font-bold w-[30px] h-[30px] rounded-full border-2 text-center"><?= $article1[0]['id']?></p>
                               <div class="max-w-[280px] mx-auto"> <?= $this->Html->image($article1[0]['img_url'], ['class'=>'w-full max-h-[126px]'])?></div>
                               <h1 class="text-[24px] font-bold text-[#041839]"><?= $article1[0]['title']?></h1>
                               <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#FF7D66] bg-[#FF7D6626] "><?= $article1[0]['category']?><p class=
@@ -507,15 +533,15 @@
                                     'end' => '1 year'
                                 ])?></p></p>
                                 </div>
-                              <p class="line-article text-[13px] leading-[20px] font-medium text-[#041839]"><?= $article1[0]['description']?></p>
-                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full "><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
+                              <p class="line-article text-[13px] leading-[20px] font-medium text-[#041839] line-article"><?= $article1[0]['description']?></p>
+                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full h-[30px] px-1 "><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
                           </div>
-                          <div class="max-w-[676px] h-[454px]  border-2 border-[black]  rounded-[22px] flex p-[23px]  mt-[30px] md:mt-0 md:ml-[30px]">
+                          <div class="max-w-[676px] h-[454px]  lg:border-2  rounded-[22px] flex p-[23px]  mt-[30px] md:mt-0 md:ml-[30px]">
                             <div class="h-[440px]">
                               
                             <?= $this->Html->image($article->img_url, ['class'=>'w-[292px] h-[399px] hidden lg:block'])?> 
                             </div>
-                              <div class=" pl-4 max-w-[330px] relative mx-auto md:border-0 border rounded-[22px]">
+                              <div class=" p-3 max-w-[330px] relative mx-auto md:border-0 border rounded-[22px]">
                               <P class="font-bold w-[30px] h-[30px] rounded-full border-2 text-center"><?= $article->id?></P>
                               <h1 class=" text-[24px] font-bold text-[#041839]"><?=$article->title?></h1>
                               <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#4CC6A0] bg-[#4CC6A026] "><?= $article->category?><p class=
@@ -526,13 +552,14 @@
                                 ])?></p></p>
                                 </div>
                               <p class="text-[13px] leading-[20px] font-medium text-[#041839]"><?= $article->description?></p>
-                              <div class="absolute bottom-0 left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full h-[30px]"><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
+                              <div class="absolute bottom-5 lg:bottom-0 left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full h-[30px] px-1 "><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
                           </div>
                           </div>
                     </div>
                     <div class="md:flex">
 
-                          <div class="relative max-w-[492px] h-[454px] p-[23px] border rounded-[22px] mt-[30px] mx-auto">
+                          <div class="relative lg:max-w-[492px] max-w-[330px] h-[454px] p-[23px] border rounded-[22px] mt-[30px] mx-auto">
+                          <p class="font-bold w-[30px] h-[30px] rounded-full border-2 text-center"><?= $article1[2]['id']?></p>
                               <h1 class="text-[24px] font-bold text-[#041839]"><?= $article1[2]['title']?></h1>
                               <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#1C9DF4] bg-[#1C9DF426]"><?= $article1[2]['category']?><p class=
                               "text-[13px] leading-[20px] font-medium ml-3"> 
@@ -542,9 +569,10 @@
                                 ])?></p></p>
                                 </div>
                               <p class="text-[13px] leading-[20px] font-medium text-[#041839]"><?= $article1[2]['description']?></p>
-                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full "><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
+                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full h-[30px] px-1 "><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
                           </div>
-                        <div class="relative max-w-[502px] h-[454px] p-[23px] border rounded-[22px] md:ml-[30px]  mt-[30px] mx-auto">                      
+                        <div class="relative lg:max-w-[502px] max-w-[330px] h-[454px] p-[23px] border rounded-[22px] md:ml-[30px]  mt-[30px] mx-auto">
+                        <p class="font-bold w-[30px] h-[30px] rounded-full border-2 text-center"><?= $article1[3]['id']?></p>                      
                               <h1 class="text-[24px] font-bold text-[#041839]"><?= $article1[3]['title']?></h1>
                               <div class="flex items-center"><p class="text-[13px] leading-[20px] font-medium text-[#EAAB00] bg-[#FFD05166] "><?= $article1[3]['category']?><p class=
                               "text-[13px] leading-[20px] font-medium ml-3"> 
@@ -554,7 +582,7 @@
                                 ])?></p></p>
                                 </div>
                               <p class="text-[13px] leading-[20px] font-medium text-[#041839]"> <?= $article1[3]['description']?></p>
-                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full"><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
+                              <div class="absolute bottom-[20px] left-[20px] border-[#049BF7] border-2 max-w-[180px] text-[14px] p-1 text-center rounded-full h-[30px] px-1"><a class="text-[#049BF7]" href="#"><?=__('Read the article')?></a></div>
                          </div>
                       
                 </div>
